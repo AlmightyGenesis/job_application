@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<meta name = "viewport"
+content = "width = device-width, initial-scale = 1.0">
+<title> JOB HIRING POST </title>
+<style>
+body {
+     margin : 0;
+     padding : 0;
+     background-image : url("img.jpeg");
+     display : flex;
+     justify-content : center;
+     align-items : center;
+     height : 100vh;
+     font-family : 'segoe UI', sans-serif;
+     }
+     .post {
+           width : 1080px;
+           height : 1080px;
+           background : linear-gradient;
+           color : white;
+           padding : 80px;
+           box-sizing : border-box;
+           display : flex;
+           flex-direction : column;
+           justify-content : center;
+           }
+      .company {
+            font-size : 40px;
+            font-weight : boldserif;
+            letter-spacing : 2px;
+            margin-bottom : 40px;
+            font-family : stencil;
+            }
+       .hiring {
+            font-size : 30px;
+            font-weight : bold;
+            margin-bottom : 40px;
+            color : gold;
+            }
+       .position {
+           font-size : 30px;
+           margin-bottom : 40px;
+           color : aqua;
+           font-weight : bold;
+           }
+       .details {
+           font-size : 25px;
+           line-height : 1.8;
+           margin-bottom : 60px;
+           color : white;																	
+          }
+       .button  {
+           background-color : black;
+           color : light pink;
+           font-size : 25px;
+           font-weight : bold;
+           padding : 15px 30px;
+           width : fit-content;
+           border-radius : 40px;
+           cursor:pointer;
+        
+          }
+        .background {
+           background-image = url("img.jpeg");
+         }
+   </style>
+   </head>
+   <body>
+         <div class = "post">
+         <div class = "company" align = "center" >
+         <img src="logo.png" alt="Almighty Genesis Logo" style="width:150px; display:block; margin:0 auto 10px;">
+         <span style="color:#4FA3E3;"> ALMIGHTY</span>
+         <span style="color:#C2188F;"> GENESIS</span>
+         </div>
+         <h2><div class = "position"> BE PART OF ALMIGHTY GENESIS </div></h2>
+         <h2><div class = "Hiring"> WE ARE HIRING </div></h2>
+        <div class = "details" >
+         Location : KAKINADA <br>
+         Experience : 0-2 years <br>
+         Qualification : Any Degree <br>
+         Requirements : Interested in marketing and sales Business Opportunities <br>
+         Send Resume : almightygenesis@gmail.com
+</div>
+<div class="button" onclick="openForm()"> Apply Now </div>
+<div class="form-container" id="jobForm">
+<div class="form-box">
+<span class="close-btn"
+onclick="closeForm()">X</span>
+<h2>Job Application</h2>
+<h3 style="text-align:center;color:#333; margin-bottom:15px;">Candidates Details</h3>
+
+  <form id="jobApplicationForm">
+    <input type="text" name="fullname" placeholder="Full Name" required>
+    <input type="Email" name="Email" placeholder="Email Address" required>
+    
+<div style="display:flex; gap:10px; align-items:center;">
+<select name="countryCode" required>
+<option value="+91">+91</option>
+<option value="+1"> +1</option>
+<option value="+44">+44</option>
+</select>
+ <input type="tel" name="Phone" id="Phone" placeholder="Phone Number" required maxlength="10" pattern="[0-9]{10}" title="please enter exactly 10 digits">
+</div>
+          <select name="position" required>
+            <option value= "" disabled selected>Select Position</option>
+            <option value="business_development_executive">BUSINESS DEVELOPMENT EXECUTIVE</option>
+            <option value="sales_executive">SALES EXECUTIVE</option>
+            <option value="marketing_executive">MARKETING EXECUTIVE</option>
+            <option value="customer_support_representive">CUSTOMER SUPPORT REPRESENTATIVE </option>
+</select>
+      <input type="file" name="resume" accept=".pdf, .doc, .docx" required>
+    <span id="fileName"></span>
+
+      <button type="submit"
+class="submit-btn">Submit Application</button>
+</form>
+</div>
+</div>
+<style>
+.form-container {
+ display:none;
+ position:fixed;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ background:rgba(0,0,0,0.6);
+ justify-content:center;
+align-items:center;
+z-index:999;
+}
+.form-box{
+  background:#fff;
+  padding:25px;
+  width:350px;
+  border-radius:10px;
+  position:relative;
+}
+.form-box inout,
+.form-box select{
+  width:100%;
+  padding:8px;
+  margin:8px 0;
+}
+.submit-btn{
+  width:100%;
+  padding:10px;
+  background:#0b2c3d;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+.close-btn{
+  position:absolute;
+  right:10px;
+  top:10px;
+  cursor:pointer;
+  }
+
+</style>
+<script>
+function openForm(){
+document.getElementById("jobForm").style.display="flex";
+}
+function closeForm(){
+documemt.getElementById("jobForm").style.display="none";
+}
+document.getElementById("jobApplicationForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+document.getElementById("jobForm").style.display="none";
+alert("Your Application Was Successfully Completed");
+});
+const resumeInput=document.querySelector('input[name="resume"]');
+const fileNameSpan=document.getElementById('fileName');
+resumeInput.addEventListener('change',function(){
+   if(this.files.length>0){
+   fileNameSpan.textContent="Selectedfile:"+this.files[0].name;
+   fileNameSpan.style.color="black";
+} else {
+   fileNameSpan.textContent="";
+}
+});
+</script>
+</head>
+</html>
